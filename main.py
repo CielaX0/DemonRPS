@@ -26,7 +26,7 @@ def game():
 
         if player_score == 1000:
             print("I will not be silenced for long...\n")
-            return
+            return ""
         elif bot_score == 1000:
             print("You belong to me now.\n")
             return

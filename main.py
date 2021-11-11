@@ -2,8 +2,8 @@ import random
 
 
 def game():
-    player_score = None
-    bot_score = None
+    player_score = 0
+    bot_score = 0
 
     while True:
         counter = random.choice(['Rock', 'Paper', 'Scissors'])

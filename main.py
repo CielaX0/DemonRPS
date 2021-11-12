@@ -1,34 +1,34 @@
 import random
+import var
 
 
 def game():
-    player_score = 0
-    bot_score = 0
-
     while True:
         counter = random.choice(['Rock', 'Paper', 'Scissors'])
         shoot = input("Shoot, Mortal...")
         shoot = shoot.capitalize()
 
         if shoot == counter:
-            print("Mortal: " + str(player_score) + " Me: " + str(bot_score))
-            print(random.choice(["A draw. We're not finished yet.\n", "Tie Game.\n", "....again.\n"]))
+            print(random.choice(var.tie))
 
-        if shoot == 'Rock' and counter == 'Scissors' or shoot == 'Scissors' and counter == 'Paper' or shoot == 'Paper' and \
-                counter == 'Rock':
-            player_score += 100
-            print("Mortal: " + str(player_score) + " Me: " + str(bot_score))
-            print(random.choice(["The Gods seem to favor you.\n", "...", "Your skill is...respectable.\n"]))
-        elif counter == 'Rock' and shoot == 'Scissors' or counter == 'Scissors' and shoot == 'Paper' or counter == 'Paper' and \
-                shoot == 'Rock':
-            bot_score += 100
-            print("Mortal: " + str(player_score) + " Me: " + str(bot_score))
-            print(random.choice(["As expected.\n", "A loss...for you.\n", "Typical Mortal strategy.\n", "Good.\n"]))
+        if shoot == 'Rock' and counter == 'Scissors' or shoot == 'Scissors' and \
+             counter == 'Paper' or shoot == 'Paper' and counter == 'Rock':
+            var.last_move = shoot
+            var.player_score += 100
+            print(str(var.player_score) + " " + str(var.bot_score))
+            print(random.choice(var.win))
+        elif counter == 'Rock' and shoot == 'Scissors' or counter == 'Scissors' and \
+            shoot == 'Paper' or counter == 'Paper' and shoot == 'Rock':
+            var.last_move = shoot
+            var.bot_score += 100
+            print(str(var.player_score) + " " + str(var.bot_score))
+            print(random.choice(var.lose))
 
-        if player_score == 1000:
+        if var.player_score == 1000:
             print("I will not be silenced for long...\n")
-            return ""
-        elif bot_score == 1000:
+            return
+
+        elif var.bot_score == 1000:
             print("You belong to me now.\n")
             return
 

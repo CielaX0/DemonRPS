@@ -1,5 +1,4 @@
-import random
-import var
+import random, var, time
 
 
 def game():
@@ -10,24 +9,26 @@ def game():
 
         if shoot == counter:
             print(random.choice(var.tie))
+            time.sleep(1)
 
         if shoot == 'Rock' and counter == 'Scissors' or shoot == 'Scissors' and \
-             counter == 'Paper' or shoot == 'Paper' and counter == 'Rock':
+                counter == 'Paper' or shoot == 'Paper' and counter == 'Rock':
             var.last_move = shoot
             var.player_score += 100
             print(str(var.player_score) + " " + str(var.bot_score))
             print(random.choice(var.win))
+            time.sleep(1)
         elif counter == 'Rock' and shoot == 'Scissors' or counter == 'Scissors' and \
-            shoot == 'Paper' or counter == 'Paper' and shoot == 'Rock':
+                shoot == 'Paper' or counter == 'Paper' and shoot == 'Rock':
             var.last_move = shoot
             var.bot_score += 100
             print(str(var.player_score) + " " + str(var.bot_score))
             print(random.choice(var.lose))
+            time.sleep(1)
 
         if var.player_score == 1000:
             print("I will not be silenced for long...\n")
             return
-
         elif var.bot_score == 1000:
             print("You belong to me now.\n")
             return

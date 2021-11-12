@@ -1,3 +1,5 @@
+
+
 player_score = 0
 bot_score = 0
 
@@ -12,4 +14,3 @@ lose = ["As expected.\n", "A loss...for you.\n", "Typical Mortal strategy.\n", "
 
 tie = ["A draw. We're not finished yet.\n", "Tie Game.\n", "....again.\n", "Great minds think alike.\n",
        "One of us must be psychic.\n", "Copying will not save you.\n"]
-
